@@ -1,0 +1,80 @@
+<% layout('layouts/boilerplate')%>
+<img src="<%- data.logo  %> " alt="" class="epllogo" />
+<h2><%- data.name %></h2>
+
+<div class="tg-wrap">
+  <table class="container">
+    <tbody>
+      <thead class="p-5">
+        <tr>
+          <th class="tg-0lax"><h1>Rank</h1></th>
+          <th class="tg-0lax"><h1>Logo</h1></th>
+          <th class="tg-0lax"><h1>Team</h1></th>
+          <th class="tg-0lax"><h1>P</h1></th>
+          <th class="tg-0lax"><h1>W</h1></th>
+          <th class="tg-0lax"><h1>D</h1></th>
+          <th class="tg-0lax"><h1>L</h1></th>
+          <th class="tg-0lax"><h1>Pts</h1></th>
+        </tr>
+      </thead>
+      <% for (let i = 0; i < 20; i++) {%>
+      <tr>
+        <td class="tg-0lax"><%- data.standings[0][i].rank %></td>
+        <td class="tg-0lax">
+          <img src="<%- data.standings[0][i].team.logo %>" alt="" />
+        </td>
+        <td class="tg-0lax"><%- data.standings[0][i].team.name %></td>
+        <td class="tg-0lax"><%- data.standings[0][i].all.played %></td>
+        <td class="tg-0lax"><%- data.standings[0][i].all.win %></td>
+        <td class="tg-0lax"><%- data.standings[0][i].all.draw %></td>
+        <td class="tg-0lax"><%- data.standings[0][i].all.lose %></td>
+        <td class="tg-0lax"><%- data.standings[0][i].points %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<!-- <style type="text/css">
+      .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      .tg td {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg th {
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        overflow: hidden;
+        padding: 10px 5px;
+        word-break: normal;
+      }
+      .tg .tg-0lax {
+        text-align: left;
+        vertical-align: top;
+      }
+      @media screen and (max-width: 767px) {
+        .tg {
+          width: auto !important;
+        }
+        .tg col {
+          width: auto !important;
+        }
+        .tg-wrap {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style> -->

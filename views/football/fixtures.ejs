@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate')%>
+<h1>Tomorrows Fixtures</h1>
+<div class="container">
+  <% for (let i = 0; i < data.length; i++) { %>
+  <li>
+    <img src="<%- data[i].teams.home.logo %>" alt="Logo" />
+    <%-data[i].teams.home.name %> VS
+    <img src=" <%- data[i].teams.away.logo %>" alt="Logo" />
+    <%- data[i].teams.away.name %>
+  </li>
+  <% } %>
+</div>
